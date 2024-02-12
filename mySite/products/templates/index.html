@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome | Vegetables {% endblock %}
+
+{% block content %}
+<h1>Vegetables</h1>
+<div class="row">
+    {% for veggies in vegetables %}
+    <div class="col">
+        <div class="card" style="width: 18rem; margin-bottom: 5%;">
+            <img src="{{ veggies.image_url }}" class="card-img-top" alt="..." style="height: 200px">
+            <div class="card-body">
+                <h5 class="card-title">{{ veggies.name }}</h5>
+                <p class="card-text">Rs. {{ veggies.price }}</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

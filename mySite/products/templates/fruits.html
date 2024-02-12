@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome | Fruits {% endblock %}
+
+{% block content %}
+<h1>Fruits</h1>
+<div class="row">
+    {% for fruit in fruits %}
+    <div class="col">
+        <div class="card" style="width: 18rem; margin-bottom: 5%;">
+            <img src="{{ fruit.image_url }}" class="card-img-top" alt="..." style="height: 200px">
+            <div class="card-body">
+                <h5 class="card-title">{{ fruit.name }}</h5>
+                <p class="card-text">Rs. {{ fruit.price }}</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
